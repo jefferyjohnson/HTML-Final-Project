@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--  api for font -->
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+		<!-- favicon -->
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<!-- shiv for use with older browsers -->
+		<script scr="http://html5shiv.googlecode.com/svn/trunk/html5/js"></script>
+		<!-- link to stylesheet(s) -->
+		<link rel="stylesheet" href="styles/enlistStyles.css">
+		
+		<!--links for the cdn-->
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+		<script>
+			$(function(){
+				$('.fadein img:gt(0)').hide();
+				setInterval(function(){
+				$('.fadein :first-child').fadeOut(0)
+				   .next('img').fadeIn(0)
+				   .end().appendTo('.fadein');}, 4000);
+			});
+		</script>
+	</head>
+	
+	<body>
+	<!-- header for page-->
+		<header>
+			<img src="images/logo.jpg">
+			<div id="headerBar">
+				<h1>The Imperium of Man</h1>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="adeptusAstartes.html">Adeptus Astartes</a></li>
+						<li><a href="astraMilitarum.html">Astra Militarum</a></li>
+						<li><a href="adeptaSororitas.html">Adepta Sororitas</a></li>
+						<li><a href="enlist.html">Enlist</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		
+		<!-- right side bar-->
+		<aside>
+			<img src="images/imperiumRecruitment.jpg">
+		</aside>
+		
+		<!--main section for page-->
+		<section>
+			<h2>Enlist in the imperial guard today!</h2>
+			<p>If you have a specific question please <a id="email" href="mailto:johnsonj0904@students.forsythtech.edu?subject=Enlistment Query">e-mail</a> us and we will get you the information you seek.  If you
+			are ready to join the imperial guard, please fill out the form below and you will be contacted.</p>
+			<form name="enlistForm" action="enlisted.html" method="get">
+				<label for="firstName">First Name: </label>
+				<input type="text" name="firstName" required><br>
+				<label for="lastName">Last Name: </label>
+				<input type="text" name="lastName" required><br>
+				<label for="email">E-mail Address: </label>
+				<input type="email" name="email" pattern="[a-zA-Z0-9]+[@]{1}[a-zA-Z0-9]+[.]{1}[a-zA-Z]{3}" required><br>
+				<label for="comments">Comments: </label>
+				<textarea name="comments" placeholder=" Why do you want to join?"></textarea><br>
+				<input type="submit" name="enlist" value="Enlist" id="enlist">
+				<input type="reset" name="reset" id="reset">
+			</form>
+		</section>
+		
+		<!--footer for page-->
+		<footer>
+			<p><script>
+				var today = new Date();
+				document.writeln((today.getMonth()+1) +"/" +today.getDate() +"/" +today.getFullYear());
+				</script></p>
+			<p>A good soldier obeys without question. A good officer commands without doubt.</p>
+			<p>Games Workshop&reg</p>
+		</footer>
+	</body>
+
+</html>
